@@ -42,6 +42,8 @@ Before deploying this project, you will need:
 
 The governance framework evolves across five implementations, each adding a new control layer:
 
+![Architecture Diagram](images/serverless cost governance.drawio2 (1).png)
+
 ```
 AWS Account Spend
         │
