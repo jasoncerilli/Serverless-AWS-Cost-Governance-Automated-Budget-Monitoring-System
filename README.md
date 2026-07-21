@@ -163,6 +163,7 @@ This is the difference between monitoring and governance.
 
 Creates the SNS topic (`cost-governance-alerts`) with a confirmed email subscription, then configures the monthly AWS Budget (`monthly-cost-monitor`) with an 80% actual cost alert connected to the SNS ARN.
 
+ ![SNS](photos/sns.png)
 **Validated:** Email notification received from AWS Budgets confirming threshold breach and successful SNS delivery.
 
 ---
@@ -171,6 +172,8 @@ Creates the SNS topic (`cost-governance-alerts`) with a confirmed email subscrip
 
 Extends the budget to add forecast-based alerts. Rather than alerting only when actual spend crosses a threshold, the system now alerts when projected spend is on track to exceed the budget — catching the problem before it happens.
 
+ ![Forecast](forecast/sns.png)
+ 
 This shifts cost governance from reactive to proactive.
 
 ---
@@ -180,7 +183,8 @@ This shifts cost governance from reactive to proactive.
 A custom IAM deny policy (`cost-control-deny-ec2`) is created and attached to a budget execution role (`budget-enforcement-role`). This role is linked to the 80% budget alert as an automated budget action. When the threshold is crossed, Budgets assumes the role and enforces the deny policy without manual input.
 
 **Validated:** After enforcement triggered, an attempted EC2 instance launch returned `AccessDenied` — confirming `ec2:RunInstances` was successfully restricted by the automated policy.
-
+ ![Attach Policy](photos/applypolicy.png)
+  ![Deny with Policy](photos/denywithpolicy.png)
 ---
 
 ### Implementation 4 — Cost Analysis via AWS Cost Explorer
@@ -193,6 +197,7 @@ Spend patterns are analysed by service, time period, and usage type to identify 
 
 Cost Allocation Tags are enabled and applied to S3 resources to demonstrate resource-level spend tracking. Tags are assigned by environment, project, and owner to show how spend accountability is enforced across a cloud environment — a standard FinOps requirement in production teams.
 
+ ![Tags](photos/tags.png)
 ---
 
 ## Key Design Decisions
