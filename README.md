@@ -163,7 +163,7 @@ This is the difference between monitoring and governance.
 
 Creates the SNS topic (`cost-governance-alerts`) with a confirmed email subscription, then configures the monthly AWS Budget (`monthly-cost-monitor`) with an 80% actual cost alert connected to the SNS ARN.
 
- ![SNS](photos/sns.png)
+ ![SNS](images/sns.png)
 **Validated:** Email notification received from AWS Budgets confirming threshold breach and successful SNS delivery.
 
 ---
@@ -172,7 +172,7 @@ Creates the SNS topic (`cost-governance-alerts`) with a confirmed email subscrip
 
 Extends the budget to add forecast-based alerts. Rather than alerting only when actual spend crosses a threshold, the system now alerts when projected spend is on track to exceed the budget — catching the problem before it happens.
 
- ![Forecast](forecast/sns.png)
+ ![Forecast](images/forecast.png)
  
 This shifts cost governance from reactive to proactive.
 
@@ -183,8 +183,8 @@ This shifts cost governance from reactive to proactive.
 A custom IAM deny policy (`cost-control-deny-ec2`) is created and attached to a budget execution role (`budget-enforcement-role`). This role is linked to the 80% budget alert as an automated budget action. When the threshold is crossed, Budgets assumes the role and enforces the deny policy without manual input.
 
 **Validated:** After enforcement triggered, an attempted EC2 instance launch returned `AccessDenied` — confirming `ec2:RunInstances` was successfully restricted by the automated policy.
- ![Attach Policy](photos/applypolicy.png)
-  ![Deny with Policy](photos/denywithpolicy.png)
+ ![Attach Policy](images/applypolicy.png)
+  ![Deny with Policy](images/denywithpolicy.png)
 ---
 
 ### Implementation 4 — Cost Analysis via AWS Cost Explorer
