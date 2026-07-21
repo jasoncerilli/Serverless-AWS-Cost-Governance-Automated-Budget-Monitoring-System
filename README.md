@@ -183,9 +183,9 @@ This shifts cost governance from reactive to proactive.
 A custom IAM deny policy (`cost-control-deny-ec2`) is created and attached to a budget execution role (`budget-enforcement-role`). This role is linked to the 80% budget alert as an automated budget action. When the threshold is crossed, Budgets assumes the role and enforces the deny policy without manual input.
 
 **Validated:** After enforcement triggered, an attempted EC2 instance launch returned `AccessDenied` — confirming `ec2:RunInstances` was successfully restricted by the automated policy.
- ![Attach Policy](images/applypolicy.png)
-  ![Deny with Policy](images/denywithpolicy.png)
 ---
+![Attach Policy](images/applypolicy.png)
+![Deny with Policy](images/denywithpolicy.png)
 
 ### Implementation 4 — Cost Analysis via AWS Cost Explorer
 
