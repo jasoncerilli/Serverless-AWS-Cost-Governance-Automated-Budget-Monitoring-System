@@ -197,7 +197,7 @@ Spend patterns are analysed by service, time period, and usage type to identify 
 
 Cost Allocation Tags are enabled and applied to S3 resources to demonstrate resource-level spend tracking. Tags are assigned by environment, project, and owner to show how spend accountability is enforced across a cloud environment — a standard FinOps requirement in production teams.
 
- ![Tags](photos/tags.png)
+ ![Tags](images/tags.png)
 ---
 
 ## Key Design Decisions
