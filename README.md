@@ -6,7 +6,7 @@
 ![SNS](https://img.shields.io/badge/SNS-Alerting-yellow?logo=amazonaws)
 ![Status](https://img.shields.io/badge/Status-Deployed%20%26%20Validated-brightgreen)
 
-> **Read the full project write-up on Medium:** [link]
+> **Read the full project write-up on Medium:** https://medium.com/@jaycerilli/serverless-aws-cost-governance-automated-budget-monitoring-system-810dbe8dc578
 > **Connect on LinkedIn:** [link]
 
 ---
@@ -227,5 +227,5 @@ Reactive alerting alone is not sufficient governance. Each layer adds a new cont
 
 ## Related
 
-- Medium article: [link]
+- Medium article: https://medium.com/@jaycerilli/serverless-aws-cost-governance-automated-budget-monitoring-system-810dbe8dc578
 - LinkedIn: [link]
